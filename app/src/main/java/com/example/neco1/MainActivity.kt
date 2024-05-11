@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickReturn(view: View) {
-        val intent = Intent(this, TestActivity2::class.java)
+        val intent = Intent(this, TestActivity::class.java)
         startActivity(intent)
     }
 }
