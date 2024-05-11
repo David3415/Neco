@@ -10,7 +10,6 @@ class TestActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_2)
     }
-
     fun onClickGoMain(view: View) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)

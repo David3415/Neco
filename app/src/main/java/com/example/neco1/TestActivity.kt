@@ -11,8 +11,5 @@ import androidx.core.view.WindowInsetsCompat
 class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
-
 }
