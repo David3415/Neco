@@ -15,12 +15,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
+
+        val message=intent.getStringExtra("key")
+        bindingClass.tvMessageMain.text=message
+    }
+
+ /*   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
+            bindingClass.tvMessageMain.text = data.getStringExtra("key2")
+        }
     }
 
     fun onClickTest(view: View) {
         val i = Intent(this, TestActivity::class.java)
         i.putExtra("key", "Как зовут?")
-        startActivity(i)
+        startActivityForResult(i,101)
     }
+*/
 }
 

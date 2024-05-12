@@ -11,21 +11,21 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.neco1.databinding.ActivityTestBinding
 
 class TestActivity : AppCompatActivity() {
-   lateinit var bindingClass:ActivityTestBinding
+    lateinit var bindingClass: ActivityTestBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingClass=ActivityTestBinding.inflate(layoutInflater)
+        bindingClass = ActivityTestBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
         val message = intent.getStringExtra("key")
-        bindingClass.tvMessage.text=message
+        bindingClass.tvMessage.text = message
 
     }
 
-   /* fun onClickBack(view: View) {
-        intent.putExtra("key",bindingClass.edName.text.toString())
-        setResult(RESULT_OK,intent)
-
-    }*/
+    fun onClickBack(view: View) {
+        intent.putExtra("key2", bindingClass.edName.text.toString())
+        setResult(RESULT_OK, intent)
+        finish()
+    }
 
 }
