@@ -7,17 +7,20 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.neco1.constance.Constance
 import com.example.neco1.databinding.ActivityMainBinding
+import com.example.neco1.databinding.ActivityTestBinding
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var bindingClass: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       setContentView(R.layout.activity_main)
+        bindingClass = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(bindingClass.root)
     }
 
-    fun onClickReturn(view: View) {
-        val intent = Intent(this, TestActivity::class.java)
-        startActivity(intent)
+    fun onClickTest(view: View) {
+        val i = Intent(this, TestActivity::class.java)
+        i.putExtra("key", "Как зовут?")
+        startActivity(i)
     }
 }
 
