@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickTest(view: View) {
         val i = Intent(this, TestActivity::class.java)
-        i.putExtra("key", "Как зовут?")
+        i.putExtra("key", "Как зdfgrsовут?")
         startActivityForResult(i, 100)
     }
 }
