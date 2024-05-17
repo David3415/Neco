@@ -1,12 +1,8 @@
 package com.example.neco1
 
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.neco1.constance.Constance
 import com.example.neco1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -32,8 +28,8 @@ class MainActivity : AppCompatActivity() {
             rcView.layoutManager = GridLayoutManager(this@MainActivity, 3)
             rcView.adapter = adapter
             buttonAdd.setOnClickListener {
-                if (index > 4) index = 0
-                var plant = Plant(imageList[index], "Plant $index")
+                if (index > 4) index = 0//while (index <5){//
+                var plant = PlantItem(imageList[index], "Plant $index")
                 adapter.addPlant(plant)
                 index++
             }

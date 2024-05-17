@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.neco1.databinding.PlantItemBinding
 
 class PlantAdapter : RecyclerView.Adapter<PlantAdapter.PlantHolder>() {
-    val plantList = ArrayList<Plant>()
+    val plantList = ArrayList<PlantItem>()
 
     class PlantHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = PlantItemBinding.bind(item)
-        fun bind(plant: Plant) = with(binding) {
+        fun bind(plant: PlantItem) = with(binding) {
             im.setImageResource(plant.imageId)
             tvTitle.text = plant.title
         }
@@ -30,7 +30,7 @@ class PlantAdapter : RecyclerView.Adapter<PlantAdapter.PlantHolder>() {
         holder.bind(plantList[position])
     }
 
-    fun addPlant(plant: Plant) {
+    fun addPlant(plant: PlantItem) {
         plantList.add(plant)
         notifyDataSetChanged()
     }
