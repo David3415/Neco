@@ -10,6 +10,7 @@ import com.example.neco1.databinding.ActivityMainBinding
 class EditActivity : AppCompatActivity() {
     lateinit var binding: ActivityEditBinding
     private var indexImage = 0
+    private var imageId = R.drawable.plant1
     private val imageList = listOf(
         R.drawable.plant1,
         R.drawable.plant2,
@@ -30,7 +31,9 @@ initButtons()
         bNext.setOnClickListener {
             indexImage++
             if (indexImage > imageList.size-1) indexImage = 0
-            Log.d("MyLog","indexImage $indexImage")
+            imageId=imageList[indexImage]
+            imageView2.setImageResource(imageId)
+          //  Log.d("MyLog","indexImage $indexImage")
         }
     }
 }

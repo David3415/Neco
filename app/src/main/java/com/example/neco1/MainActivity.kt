@@ -17,13 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val adapter = PlantAdapter()
     private var editLauncher: ActivityResultLauncher<Intent>? = null
 
-    private val imageList = listOf(
-        R.drawable.plant1,
-        R.drawable.plant2,
-        R.drawable.plant3,
-        R.drawable.plant4,
-        R.drawable.plant5
-    )
+
 
     private var index = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             rcView.layoutManager = GridLayoutManager(this@MainActivity, 3)
             rcView.adapter = adapter
             buttonAdd.setOnClickListener {
+
                 editLauncher?.launch(Intent(this@MainActivity, EditActivity::class.java))
             }
         }
