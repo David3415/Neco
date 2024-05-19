@@ -19,11 +19,12 @@ class TestActivity : AppCompatActivity() {
 
         val message = intent.getStringExtra("key")
         bindingClass.tvMessage.text = message
-
     }
 
     fun onClickBack(view: View) {
         intent.putExtra("key2", bindingClass.edName.text.toString())
+        //val message = intent.getStringExtra("key2")
+        //bindingClass.tv
         setResult(RESULT_OK, intent)
         finish()
     }

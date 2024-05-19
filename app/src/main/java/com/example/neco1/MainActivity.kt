@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.neco1.constance.Constance
 import com.example.neco1.databinding.ActivityMainBinding
-import com.example.neco1.databinding.ActivityTestBinding
+
+/*напечатать и передать сообщение
+* в другую активити
+* и в другой активити набрать и послать обратно*/
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
@@ -22,14 +24,16 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
-            bindingClass.tvMessageMain.text = data.getStringExtra("key2")
+            //bindingClass.tvMessageMain.text = data.getStringExtra("key2")
+            bindingClass.edQuest.setText(data.getStringExtra("key2"))
         }
     }
 
-
     fun onClickTest(view: View) {
+        var quest = bindingClass.edQuest.text
+        Log.e("MyLog", quest.toString())
         val i = Intent(this, TestActivity::class.java)
-        i.putExtra("key", "Как зdfgrsовут?")
+        i.putExtra("key", quest)
         startActivityForResult(i, 100)
     }
 }

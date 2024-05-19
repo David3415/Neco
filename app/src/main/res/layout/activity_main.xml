@@ -11,8 +11,9 @@
         android:id="@+id/btnClickTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="input"
         android:onClick="onClickTest"
-        android:text="Test Activity"
+        android:text="to Test Activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,11 +24,25 @@
         android:id="@+id/tvMessageMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="input"
         android:text="Main Activity"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btnClickTest"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.694" />
+
+    <EditText
+        android:id="@+id/edQuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Typy your quest"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/btnClickTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMessageMain" />
 </androidx.constraintlayout.widget.ConstraintLayout>
